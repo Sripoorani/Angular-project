@@ -1,0 +1,66 @@
+<div class="account-details-form">
+    <h2>Account and User Details</h2>
+    <form [formGroup]="accountForm" (ngSubmit)="onSubmit()">
+
+        <!-- Name Field -->
+        <div class="form-field">
+            <label for="name">Username</label>
+            <input id="name" formControlName="name" type="text" placeholder="Enter your username" />
+            <div *ngIf="accountForm.get('name')?.invalid && accountForm.get('name')?.touched">
+                <small *ngIf="accountForm.get('name')?.hasError('required')">Username is required.</small>
+                <small *ngIf="accountForm.get('name')?.hasError('minlength')">Username must be at least 3 characters
+                    long.</small>
+            </div>
+        </div>
+
+        <!-- Email Field -->
+        <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" formControlName="email" type="email" placeholder="Enter Email " />
+            <div *ngIf="accountForm.get('email')?.invalid && accountForm.get('email')?.touched">
+                <small *ngIf="accountForm.get('email')?.hasError('required')">Email is required.</small>
+                <small *ngIf="accountForm.get('email')?.hasError('email')">Please enter a valid email address.</small>
+            </div>
+        </div>
+
+        <div class="form-field">
+            <label for="phoneNumber">Phone Number</label>
+            <input id="phoneNumber" formControlName="phoneNumber" type="text" placeholder="Enter phone number" />
+            <div *ngIf="accountForm.get('phoneNumber')?.invalid && accountForm.get('phoneNumber')?.touched">
+                <small *ngIf="accountForm.get('phoneNumber')?.hasError('required')">Phone number is required.</small>
+                <small *ngIf="accountForm.get('phoneNumber')?.hasError('pattern')">Please enter a valid phone
+                    number.</small>
+            </div>
+        </div>
+
+        <!-- Password Field -->
+        <div class="form-field">
+            <label for="password">Password</label>
+            <input id="password" formControlName="password" placeholder="Enter Password" type="password" />
+            <div *ngIf="accountForm.get('password')?.invalid && accountForm.get('password')?.touched">
+                <small *ngIf="!(accountForm.get('password')?.errors?.['passwordStrength']?.hasUpperCase ?? true)">
+                    Include at least one uppercase letter.
+                </small>
+                <small *ngIf="!(accountForm.get('password')?.errors?.['passwordStrength']?.hasLowerCase ?? true)">
+                    Include at least one lowercase letter.
+                </small>
+                <small *ngIf="!(accountForm.get('password')?.errors?.['passwordStrength']?.hasNumber ?? true)">
+                    Include at least one number.
+                </small>
+                <small *ngIf="!(accountForm.get('password')?.errors?.['passwordStrength']?.hasSymbol ?? true)">
+                    Include at least one special symbol.
+                </small>
+                <small *ngIf="!(accountForm.get('password')?.errors?.['passwordStrength']?.isValidLength ?? true)">
+                    Be at least 8 characters long.
+                </small>
+            </div>
+        </div>
+
+
+
+        <!-- Submit Button -->
+        <button type="submit" [disabled]="accountForm.invalid || isSubmitting">
+            Submit
+        </button>
+    </form>
+</div>

@@ -1,0 +1,65 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: grey;
+    padding: 1rem;
+
+    /* Adjust padding to increase the size of the navbar */
+    color: white;
+
+    /* Sticky position */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* Keeps the navbar above other elements */
+    width: 100%;
+    /* Ensure the navbar spans the full width of the viewport */
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    gap: 1rem;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        background-color: grey;
+        position: absolute;
+        top: 3.5rem;
+        right: 1rem;
+        padding: 1rem;
+        border-radius: 0.5rem;
+    }
+
+    .menu.open {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}

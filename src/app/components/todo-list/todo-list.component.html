@@ -1,0 +1,11 @@
+<div class="heading">Todo List</div>
+
+<div class="todo-list" infinite-scroll [infiniteScrollDistance]="2" [infiniteScrollUpDistance]="1.5"
+    [infiniteScrollThrottle]="150" (scrolled)="onScroll()">
+    <div *ngFor="let todo of todos" class="todo-item">
+        <p>{{ todo.id }}: {{ todo.todo }}</p>
+        <small>Status: {{ todo.completed ? 'Completed' : 'Pending' }}</small>
+    </div>
+    <div *ngIf="isLoading" class="loading">Loading...</div>
+    <div *ngIf="!hasMore && !isLoading" class="end-of-list">No more items to load.</div>
+</div>

@@ -1,0 +1,11 @@
+<div class="dog-gallery">
+    <h1>Dog Gallery</h1>
+    <button (click)="loadDogImages()" [disabled]="isLoading">
+        {{ isLoading ? 'Loading...' : 'Reload Images' }}
+    </button>
+    <div class="gallery">
+        <div *ngFor="let image of dogImages" class="gallery-item">
+            <img [src]="image" alt="Dog Image" />
+        </div>
+    </div>
+</div>
