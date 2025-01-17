@@ -4,17 +4,11 @@
     align-items: center;
     background-color: grey;
     padding: 1rem;
-
-    /* Adjust padding to increase the size of the navbar */
     color: white;
-
-    /* Sticky position */
     position: sticky;
     top: 0;
     z-index: 1000;
-    /* Keeps the navbar above other elements */
     width: 100%;
-    /* Ensure the navbar spans the full width of the viewport */
 }
 
 .logo {
@@ -42,7 +36,7 @@
     cursor: pointer;
 }
 
-/* Responsive Styles */
+
 @media (max-width: 768px) {
     .menu {
         display: none;

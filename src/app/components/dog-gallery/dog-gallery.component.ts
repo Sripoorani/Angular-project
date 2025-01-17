@@ -10,8 +10,8 @@ import { Component } from '@angular/core';
   styleUrl: './dog-gallery.component.scss'
 })
 export class DogGalleryComponent {
-  dogImages: string[] = []; // Array to hold image URLs
-  isLoading = false;       // Loading state
+  dogImages: string[] = []; 
+  isLoading = false;       
 
   constructor(private http: HttpClient) {}
 

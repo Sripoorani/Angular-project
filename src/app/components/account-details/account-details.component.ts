@@ -25,7 +25,7 @@ export class AccountDetailsComponent {
       phoneNumber: [
         '', 
         [
-          Validators.required, // Phone number is required
+          Validators.required, 
           Validators.pattern(/^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/) // Phone number pattern
         ]
       ],

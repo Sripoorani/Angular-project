@@ -41,7 +41,7 @@ button:hover:not(:disabled) {
     background-color: #0056b3;
 }
 
-/* Gallery Grid */
+
 .gallery {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -68,7 +68,7 @@ button:hover:not(:disabled) {
 @media (max-width: 768px) {
     .gallery {
         grid-template-columns: repeat(2, 1fr);
-        /* 2 columns for smaller screens */
+
     }
 
     .gallery-item img {
